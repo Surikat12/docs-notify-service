@@ -14,6 +14,44 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <liquibase-property-file>src/main/resources/liquibase.properties</liquibase-property-file>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/liquibase</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.24.0</version>
+                <configuration>
+                    <propertyFile>${liquibase-property-file}</propertyFile>
+                    <changelogSchemaName>notify-service</changelogSchemaName>
+                    <databaseChangeLogTableName>DOCUMENTS_DATABASE_CHANGE_LOG</databaseChangeLogTableName>
+                    <databaseChangeLogLockTableName>DOCUMENTS_DATABASE_CHANGE_LOG_LOCK</databaseChangeLogLockTableName>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

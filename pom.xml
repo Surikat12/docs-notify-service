@@ -26,6 +26,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <postgresql.driver.version>42.2.6</postgresql.driver.version>
         <jooq.version>3.16.4</jooq.version>
+        <liquibase-core.version>3.8.9</liquibase-core.version>
     </properties>
 
 </project>
