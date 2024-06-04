@@ -2,7 +2,7 @@ package com.surikat.documents.notifyservice.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class NotificationModel {
@@ -11,7 +11,7 @@ public class NotificationModel {
     private UUID processId;
     private NotificationType type;
     private String message;
-    private LocalDate time;
+    private LocalDateTime time;
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class NotificationModel {
         return this;
     }
 
-    public LocalDate getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
-    public NotificationModel withTime(LocalDate time) {
+    public NotificationModel withTime(LocalDateTime time) {
         this.time = time;
         return this;
     }
