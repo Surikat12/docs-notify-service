@@ -1,0 +1,21 @@
+spring.main.allow-bean-definition-overriding: true
+
+server:
+  port: 18200
+
+spring:
+  application:
+    name: notify-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/documents
+    username: test
+    password: test
+  jooq:
+    sql-dialect: Postgres
+
+info:
+  app:
+    name: Сервис уведомлений
+    description: Сервис для отправки уведомлений
+    version: "@project.version"
