@@ -17,7 +17,6 @@ public class NotificationRepositoryImpl implements NotificationRepository {
 
     public void insert(NotificationModel notification) {
         jooqContext.insertInto(NOTIFICATION)
-                .set(NOTIFICATION.ID, notification.getId())
                 .set(NOTIFICATION.PROCESS_ID, notification.getProcessId())
                 .set(NOTIFICATION.TYPE, notification.getType().toString())
                 .set(NOTIFICATION.MESSAGE, notification.getMessage())
