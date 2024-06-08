@@ -36,6 +36,16 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.surikat.docs</groupId>
+            <artifactId>docs-common</artifactId>
+            <version>${docs-common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.surikat.docs</groupId>
+            <artifactId>docs-common-client</artifactId>
+            <version>${docs-common.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>

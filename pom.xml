@@ -23,6 +23,7 @@
     </parent>
 
     <properties>
+        <docs-common.version>0.0.1-SNAPSHOT</docs-common.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <postgresql.driver.version>42.2.6</postgresql.driver.version>
         <jooq.version>3.16.4</jooq.version>
