@@ -1,6 +1,7 @@
-package com.surikat.documents.notifyservice.common;
+package com.surikat.documents.notifyservice.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.surikat.documents.notifyservice.common.NotificationType;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

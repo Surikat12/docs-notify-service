@@ -1,6 +1,6 @@
 package com.surikat.documents.notifyservice.service.repository;
 
-import com.surikat.documents.notifyservice.common.NotificationModel;
+import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import com.surikat.documents.notifyservice.common.NotificationType;
 import org.jooq.DSLContext;
 import org.junit.jupiter.api.Test;

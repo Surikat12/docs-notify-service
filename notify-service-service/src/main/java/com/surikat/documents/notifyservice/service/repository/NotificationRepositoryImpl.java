@@ -1,6 +1,6 @@
 package com.surikat.documents.notifyservice.service.repository;
 
-import com.surikat.documents.notifyservice.common.NotificationModel;
+import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
