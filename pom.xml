@@ -28,6 +28,9 @@
         <postgresql.driver.version>42.2.6</postgresql.driver.version>
         <jooq.version>3.16.4</jooq.version>
         <liquibase-core.version>3.8.9</liquibase-core.version>
+        <open-api.version>1.7.0</open-api.version>
+        <swagger-annotations.version>2.2.14</swagger-annotations.version>
+        <swagger-maven-plugin.version>2.2.14</swagger-maven-plugin.version>
         <log4j.version>2.23.1</log4j.version>
     </properties>
 
