@@ -1,5 +1,6 @@
 package com.surikat.documents.notifyservice.service.service;
 
+import com.surikat.docs.common.exception.DocsServiceException;
 import com.surikat.documents.notifyservice.common.dto.NotificationDto;
 import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import com.surikat.documents.notifyservice.service.TestData;
@@ -24,7 +25,7 @@ class NotificationServiceImplTest {
     }
 
     @Test
-    void notifyTest() {
+    void notifyTest() throws DocsServiceException {
         NotificationDto notificationDto = TestData.getTestNotificationDto();
 
         underTest.notify(notificationDto);

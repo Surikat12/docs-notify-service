@@ -28,6 +28,7 @@
         <postgresql.driver.version>42.2.6</postgresql.driver.version>
         <jooq.version>3.16.4</jooq.version>
         <liquibase-core.version>3.8.9</liquibase-core.version>
+        <log4j.version>2.23.1</log4j.version>
     </properties>
 
 </project>
