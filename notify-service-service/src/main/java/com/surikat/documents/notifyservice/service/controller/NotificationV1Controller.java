@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static com.surikat.documents.notifyservice.common.MethodConst.*;
 
 @RestController
@@ -27,7 +29,7 @@ public class NotificationV1Controller extends AbstractApiController {
     @Operation(description = "Послать уведомление")
     @PostMapping(value = POST_NOTIFICATION, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public NotificationModel notify(@RequestBody NotificationRequest notification) throws DocsServiceException {
+    public NotificationModel notify(@RequestBody @Valid NotificationRequest notification) throws DocsServiceException {
         return notificationService.notify(notification);
     }
 }
