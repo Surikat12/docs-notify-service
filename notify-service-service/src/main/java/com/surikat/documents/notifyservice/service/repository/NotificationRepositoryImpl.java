@@ -1,6 +1,7 @@
 package com.surikat.documents.notifyservice.service.repository;
 
 import com.surikat.documents.notifyservice.common.model.NotificationModel;
+import com.surikat.documents.notifyservice.service.mapper.NotificationMapper;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
@@ -15,12 +16,13 @@ public class NotificationRepositoryImpl implements NotificationRepository {
         this.jooqContext = jooqContext;
     }
 
-    public void insert(NotificationModel notification) {
-        jooqContext.insertInto(NOTIFICATION)
+    public NotificationModel insert(NotificationModel notification) {
+        return jooqContext.insertInto(NOTIFICATION)
                 .set(NOTIFICATION.PROCESS_ID, notification.getProcessId())
                 .set(NOTIFICATION.TYPE, notification.getType().toString())
                 .set(NOTIFICATION.MESSAGE, notification.getMessage())
                 .set(NOTIFICATION.TIME, notification.getTime())
-                .execute();
+                .returningResult(NOTIFICATION.ID, NOTIFICATION.PROCESS_ID, NOTIFICATION.TYPE, NOTIFICATION.MESSAGE, NOTIFICATION.TIME)
+                .fetchOne(new NotificationMapper());
     }
 }

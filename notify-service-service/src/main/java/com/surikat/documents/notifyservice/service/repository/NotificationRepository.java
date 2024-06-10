@@ -4,5 +4,5 @@ import com.surikat.documents.notifyservice.common.model.NotificationModel;
 
 public interface NotificationRepository {
 
-    void insert(NotificationModel notification);
+    NotificationModel insert(NotificationModel notification);
 }

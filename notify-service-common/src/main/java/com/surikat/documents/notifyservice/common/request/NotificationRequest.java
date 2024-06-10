@@ -1,4 +1,4 @@
-package com.surikat.documents.notifyservice.common.dto;
+package com.surikat.documents.notifyservice.common.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surikat.documents.notifyservice.common.NotificationType;
@@ -6,7 +6,7 @@ import com.surikat.documents.notifyservice.common.NotificationType;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class NotificationDto {
+public class NotificationRequest {
 
     @JsonProperty("process_id")
     private UUID processId;
@@ -18,7 +18,7 @@ public class NotificationDto {
         return processId;
     }
 
-    public NotificationDto withProcessId(UUID processId) {
+    public NotificationRequest withProcessId(UUID processId) {
         this.processId = processId;
         return this;
     }
@@ -27,7 +27,7 @@ public class NotificationDto {
         return type;
     }
 
-    public NotificationDto withType(NotificationType type) {
+    public NotificationRequest withType(NotificationType type) {
         this.type = type;
         return this;
     }
@@ -36,7 +36,7 @@ public class NotificationDto {
         return message;
     }
 
-    public NotificationDto withMessage(String message) {
+    public NotificationRequest withMessage(String message) {
         this.message = message;
         return this;
     }
@@ -45,8 +45,18 @@ public class NotificationDto {
         return time;
     }
 
-    public NotificationDto withTime(LocalDateTime time) {
+    public NotificationRequest withTime(LocalDateTime time) {
         this.time = time;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "NotificationRequest{" +
+                "processId=" + processId +
+                ", type=" + type +
+                ", message='" + message + '\'' +
+                ", time=" + time +
+                '}';
     }
 }

@@ -2,7 +2,8 @@ package com.surikat.documents.notifyservice.service.controller;
 
 import com.surikat.docs.common.controller.AbstractApiController;
 import com.surikat.docs.common.exception.DocsServiceException;
-import com.surikat.documents.notifyservice.common.dto.NotificationDto;
+import com.surikat.documents.notifyservice.common.model.NotificationModel;
+import com.surikat.documents.notifyservice.common.request.NotificationRequest;
 import com.surikat.documents.notifyservice.service.service.NotificationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -26,7 +27,7 @@ public class NotificationV1Controller extends AbstractApiController {
     @Operation(description = "Послать уведомление")
     @PostMapping(value = POST_NOTIFICATION, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public void notify(@RequestBody NotificationDto notification) throws DocsServiceException {
-        notificationService.notify(notification);
+    public NotificationModel notify(@RequestBody NotificationRequest notification) throws DocsServiceException {
+        return notificationService.notify(notification);
     }
 }
