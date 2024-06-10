@@ -1,7 +1,7 @@
 package com.surikat.documents.notifyservice.service.service;
 
 import com.surikat.docs.common.exception.DocsServiceException;
-import com.surikat.documents.notifyservice.common.dto.NotificationDto;
+import com.surikat.documents.notifyservice.common.request.NotificationRequest;
 import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import com.surikat.documents.notifyservice.service.repository.NotificationRepository;
 import org.apache.logging.log4j.LogManager;
@@ -19,15 +19,15 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    public void notify(NotificationDto notificationDto) throws DocsServiceException {
-        LOGGER.debug("notify method started with notification={}", notificationDto.toString());
+    public NotificationModel notify(NotificationRequest notificationRequest) throws DocsServiceException {
+        LOGGER.debug("notify method started with notification={}", notificationRequest.toString());
         NotificationModel notificationModel = new NotificationModel()
-                .withProcessId(notificationDto.getProcessId())
-                .withType(notificationDto.getType())
-                .withMessage(notificationDto.getMessage())
-                .withTime(notificationDto.getTime());
+                .withProcessId(notificationRequest.getProcessId())
+                .withType(notificationRequest.getType())
+                .withMessage(notificationRequest.getMessage())
+                .withTime(notificationRequest.getTime());
         try {
-            notificationRepository.insert(notificationModel);
+            return notificationRepository.insert(notificationModel);
         } catch (Exception ex) {
             throw new DocsServiceException(ex.toString());
         }
