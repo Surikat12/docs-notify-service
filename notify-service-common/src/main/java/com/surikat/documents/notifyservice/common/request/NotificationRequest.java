@@ -2,16 +2,21 @@ package com.surikat.documents.notifyservice.common.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surikat.documents.notifyservice.common.NotificationType;
-
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class NotificationRequest {
 
+    @NotNull
     @JsonProperty("process_id")
     private UUID processId;
+    @NotNull
     private NotificationType type;
+    @NotBlank
     private String message;
+    @NotNull
     private LocalDateTime time;
 
     public UUID getProcessId() {

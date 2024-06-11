@@ -21,12 +21,13 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public NotificationModel notify(NotificationRequest notificationRequest) throws DocsServiceException {
         LOGGER.debug("notify method started with notification={}", notificationRequest.toString());
-        NotificationModel notificationModel = new NotificationModel()
+        try {
+            NotificationModel notificationModel = new NotificationModel()
                 .withProcessId(notificationRequest.getProcessId())
                 .withType(notificationRequest.getType())
                 .withMessage(notificationRequest.getMessage())
                 .withTime(notificationRequest.getTime());
-        try {
+
             return notificationRepository.insert(notificationModel);
         } catch (Exception ex) {
             throw new DocsServiceException(ex.toString());
