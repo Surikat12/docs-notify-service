@@ -7,6 +7,9 @@ import com.surikat.documents.notifyservice.service.repository.NotificationReposi
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class NotificationServiceImpl implements NotificationService {
@@ -19,6 +22,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
     public NotificationModel notify(NotificationRequest notificationRequest) throws DataBaseException {
         LOGGER.debug("notify method started with notification={}", notificationRequest.toString());
         try {
