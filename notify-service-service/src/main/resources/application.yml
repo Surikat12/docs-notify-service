@@ -24,4 +24,4 @@ info:
   app:
     name: Сервис уведомлений
     description: Сервис для отправки уведомлений
-    version: "@project.version"
+    version: "@project.version@"
