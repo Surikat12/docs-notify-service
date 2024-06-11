@@ -1,6 +1,6 @@
 package com.surikat.documents.notifyservice.service.service;
 
-import com.surikat.docs.common.exception.DocsServiceException;
+import com.surikat.docs.common.exception.DataBaseException;
 import com.surikat.documents.notifyservice.common.request.NotificationRequest;
 import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import com.surikat.documents.notifyservice.service.repository.NotificationRepository;
@@ -19,7 +19,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    public NotificationModel notify(NotificationRequest notificationRequest) throws DocsServiceException {
+    public NotificationModel notify(NotificationRequest notificationRequest) throws DataBaseException {
         LOGGER.debug("notify method started with notification={}", notificationRequest.toString());
         try {
             NotificationModel notificationModel = new NotificationModel()
@@ -29,8 +29,8 @@ public class NotificationServiceImpl implements NotificationService {
                 .withTime(notificationRequest.getTime());
 
             return notificationRepository.insert(notificationModel);
-        } catch (Exception ex) {
-            throw new DocsServiceException(ex.toString());
+        } catch (Exception e) {
+            throw new DataBaseException(e.toString());
         }
     }
 }
