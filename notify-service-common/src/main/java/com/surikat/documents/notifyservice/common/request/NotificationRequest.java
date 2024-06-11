@@ -2,8 +2,8 @@ package com.surikat.documents.notifyservice.common.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.surikat.documents.notifyservice.common.NotificationType;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

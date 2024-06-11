@@ -28,7 +28,7 @@
         <postgresql.driver.version>42.2.6</postgresql.driver.version>
         <jooq.version>3.16.4</jooq.version>
         <liquibase-core.version>3.8.9</liquibase-core.version>
-        <jakarta.validation-api.version>3.1.0</jakarta.validation-api.version>
+        <jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
         <open-api.version>1.7.0</open-api.version>
         <swagger-annotations.version>2.2.14</swagger-annotations.version>
         <swagger-maven-plugin.version>2.2.14</swagger-maven-plugin.version>
