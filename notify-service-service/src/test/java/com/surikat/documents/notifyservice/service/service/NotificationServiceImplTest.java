@@ -1,6 +1,6 @@
 package com.surikat.documents.notifyservice.service.service;
 
-import com.surikat.docs.common.exception.DocsServiceException;
+import com.surikat.docs.common.exception.DataBaseException;
 import com.surikat.documents.notifyservice.common.request.NotificationRequest;
 import com.surikat.documents.notifyservice.common.model.NotificationModel;
 import com.surikat.documents.notifyservice.service.TestData;
@@ -24,7 +24,7 @@ class NotificationServiceImplTest {
     }
 
     @Test
-    void notifyTest() throws DocsServiceException {
+    void notifyTest() throws DataBaseException {
         Long testId = 1L;
         NotificationRequest notificationRequest = TestData.getTestNotificationRequest();
         when(notificationRepository.insert(any(NotificationModel.class)))
